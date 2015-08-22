@@ -1,8 +1,48 @@
+set nocompatible
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+set diffexpr=MyDiff()
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  let eq = ''
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      let cmd = '""' . $VIMRUNTIME . '\diff"'
+      let eq = '"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+endfunction
+
 " General {{{
 set nocompatible
 filetype off
 
 scriptencoding utf-8
+
+set enc=utf8
+set fileencodings=utf-8,gbk,gb18030,gk2312
+" 解决菜单乱码
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+" 解决consle输出乱码
+language messages zh_CN.utf-8
+" guifont
+set guifont=Source_Code_Pro:h11
 
 set autowrite
 set autoread
@@ -11,7 +51,7 @@ set hidden
 
 " Backup
 set nobackup
-set directory=/tmp//
+set directory=e:\data\vimCache\
 
 " Match and search
 set hlsearch
@@ -67,7 +107,7 @@ set cursorline
 hi CursorLine cterm=NONE ctermbg=236 ctermfg=NONE gui=NONE guibg=#2d2d2d guifg=NONE
 
 set list
-set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
+set listchars=tab:?\ ,trail:?,extends:#,nbsp:.
 
 set winminheight=0
 
