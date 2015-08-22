@@ -107,7 +107,7 @@ set cursorline
 hi CursorLine cterm=NONE ctermbg=236 ctermfg=NONE gui=NONE guibg=#2d2d2d guifg=NONE
 
 set list
-set listchars=tab:?\ ,trail:?,extends:#,nbsp:.
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
 set winminheight=0
 
