@@ -1,0 +1,48 @@
+"3.11.3 (created: 2016/01/30 14:42:44)
+
+inoremap <C-a> <Insert><C-a><Insert>
+noremap J gT
+noremap K gt
+noremap j 3j
+noremap k 3k
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
+source! "C:\\Users\\hzfanxianwei\\.vimperatorrc.local"
+
+" vim: set ft=vimperator:
+
+" THEME CONFIGURATION
+highlight NonText             background: #212121;
+highlight Normal              color: #AAAAAA;     background: #212121;            font-weight:lighter;        font-family:"Source Code Pro";      font-size: 14px;
+highlight StatusLine          color: #FFFFFF;     background: #212121;            font-weight:lighter;
+highlight Title				        color: #ACBC90;     background: #3F3F3F;            font-weight: bold;
+highlight CompTitle			      color: #0099FF;     background: #2b2b2b;            font-weight: bold;
+highlight CompTitle>*		      padding: 0 .5ex;
+highlight CompDesc            overflow: hidden;   width: 200px;                   max-width: 400px;           font-width: 16px;
+highlight CompResult          overflow: hidden;   width: 300px;                   max-width: 300px;           font-width: 16px;
+highlight CompItem[selected]  color: #D0D0D0;     background: #2b2b2b;            font-weight:normal;
+
+" Color of keywords after filted in Completion
+highlight Filter			        color: #0099FF;     background: #212121;            font-weight: bold;
+highlight CmdLine             color: #999999;     background: #212121;            font-weight:lighter;
+highlight CmdLine>*           font-weight: 14px;  font-family: "Source Code Pro";
+highlight ModeMsg             color: #C0FF3E;     background: #212121;            font-weight:bold;
+highlight ErrorMsg            color: red;         background: #212121;            font-weight:normal;
+highlight URL				          color: #ACBC90;     background: inherit;            text-decoration: none;
+highlight URL:hover				    cursor: pointer;    text-decoration: underline;
+highlight Indicator		        color: #94BFF3;
+highlight PromptText          color: #9A32CD;
+highlight InfoMsg			        color: #ACBC90;     background: inherit;
+highlight WarningMsg				  color: #FF0000;     background: inherit;
+highlight Hint                color: #0099FF; font-size: 12px;    background: rgba(0,0,0, .7);    font-family:"Source Code Pro"; padding: 0 3px; margin: -5px 0 0 -5px; text-transform: uppercase; border-radius: 3px; z-index: 9999;
+highlight HintElem            background: transpant;
+highlight HintActive          background: red;
+highlight Help                font-size: 10pt;      line-height: 1.4em;           font-family: -moz-fixed;
+highlight Key                 font-weight: lighter; font-weight: 200%;
+highlight Object              color: maroon;
+highlight Function            color: navy;
+highlight Question            color: purple;        background: inherit;
+highlight Mapping             color: purple;
+highlight MoreMsg             color: #6A4ACD;       background: inherit;
+
+" The LineNumber for Error
+highlight LineNr              color: orange;        background: white;
