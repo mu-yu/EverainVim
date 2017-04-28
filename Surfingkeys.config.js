@@ -3,5 +3,5 @@ map('K', 'R');
 
 unmap('<Ctrl-j>');
 
-Hints.characters = 'abcdefghijklmnopqrstuvwxyz'
+Hints.characters = 'acdehijklmnopqrsuvwxyztbgf'
 settings.hintAlign = "left";
